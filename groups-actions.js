@@ -1,0 +1,29 @@
+import callService from '../../core/api/api-call';
+
+// action
+export function loadInitGroup(responseJson) {
+  return { type: "LOAD_INIT_GROUP", responseJson };
+}
+
+
+// thunk
+
+export function initGroup() {
+  return function(dispatch) {
+    let requestParams = {};
+    requestParams.action = "INIT";
+    requestParams.service = "GROUP_SVC";
+    //requestParams.appForms = new Array("LOGIN_FORM","REGISTRATION_FORM","FORGOTPASSWORD_FORM","PASSWORD_CHANGE_FORM");
+    requestParams.appTexts = new Array("GROUP_PAGE");
+    let params = {};
+    params.requestParams = requestParams;
+    params.URI = '/api/member/callService';
+
+    return callService(params).then( (responseJson) => {
+      dispatch(loadInitGroup(responseJson));
+    }).catch(error => {
+      throw(error);
+    });
+
+  };
+}
