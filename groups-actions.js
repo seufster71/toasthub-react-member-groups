@@ -13,8 +13,8 @@ export function initGroup() {
     let requestParams = {};
     requestParams.action = "INIT";
     requestParams.service = "GROUP_SVC";
-    //requestParams.appForms = new Array("LOGIN_FORM","REGISTRATION_FORM","FORGOTPASSWORD_FORM","PASSWORD_CHANGE_FORM");
-    requestParams.appTexts = new Array("GROUP_PAGE");
+    //requestParams.prefForms = new Array("LOGIN_FORM","REGISTRATION_FORM","FORGOTPASSWORD_FORM","PASSWORD_CHANGE_FORM");
+    requestParams.prefTexts = new Array("GROUP_PAGE");
     let params = {};
     params.requestParams = requestParams;
     params.URI = '/api/member/callService';
