@@ -8,7 +8,7 @@ export function loadInitGroup(responseJson) {
 
 // thunk
 
-export function initGroup() {
+export function init() {
   return function(dispatch) {
     let requestParams = {};
     requestParams.action = "INIT";
